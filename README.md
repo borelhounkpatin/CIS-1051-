@@ -7,4 +7,4 @@ Buil a roulette wheel game.
 plus all the winning from the previous turns minus all the losses.
 4. At each turn,prompt the user on if he want to keep play.
 5. The game will quit running if the betting purse equals zero.
-
+I am doing this project with Kyle Rowe. Our assigned TA is Joanne Nichols.
