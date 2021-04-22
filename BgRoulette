@@ -1,0 +1,234 @@
+import turtle, math, random
+
+screen = turtle.Screen()
+screen.bgcolor('green')
+screen.title('Roulette Game')
+screen.setup(1200,1000)
+
+bob1 = turtle.Turtle()
+bob1.pensize(2)
+bob1.speed(0)
+
+ball = turtle.Turtle()
+ball.speed(0)
+ball.shape('circle')
+ball.shapesize(1)
+ball.color('beige')
+ball.penup()
+
+buton = turtle.Turtle()
+buton.speed(0)
+#buton.pensize(10)
+bob = turtle.Turtle()
+bob.pensize(2)
+bob.speed(0)
+
+
+
+angle = 180 - (0.5*(180 - (360/37)))
+def radius(n):
+    radius = n/(2*math.sin(math.radians(180/37)))
+    return  radius
+
+def polygon1(n):
+    bob1.color('white') 
+    for i in range(37):
+        bob1.begin_fill()
+        bob1.forward(radius(n) )
+        bob1.left(angle )
+        bob1.forward(n)
+        bob1.left(angle )
+        bob1.forward(radius(n))
+        bob1.left(180)
+        bob1.end_fill()
+   
+def polygon2(n):
+    for i in range(37):
+        bob1.begin_fill()
+        if i == 0 :
+            bob1.color('green') 
+        elif i in [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35]:
+            bob1.color('black')
+        else:
+            bob1.color('red')
+        bob1.forward(radius(n) )
+        bob1.left(angle )
+        bob1.forward(n)
+        bob1.left(angle )
+        bob1.forward(radius(n))
+        bob1.left(180)
+        bob1.end_fill()
+
+def polygon3(n):
+    for j in range(37):
+        bob1.color('white')
+        bob1.up()
+        nblist= [0,26,3,35,12,28,7,29,18,22,9,31,14,20,1,33,16,24,5,10,23,8,30,11,36,13,27,6,34,17,25,2,21,4,19,15,32]              
+        bob1.forward(radius(n) )
+        bob1.left(angle )
+        bob1.forward(n)
+        bob1.down()
+        bob1.write( nblist[j] , font =('Arial',12,'normal'))
+        bob1.up()
+        bob1.left(angle )
+        bob1.forward(radius(n))
+        bob1.left(180)
+        bob1.down()
+        
+def polygon4(n):
+    bob1.color('black')
+    for i in range(37):
+        bob1.forward(radius(n) )
+        bob1.left(angle )
+        bob1.forward(n)
+        bob1.left(angle )
+        bob1.forward(radius(n))
+        bob1.left(180)
+
+        
+def polygon5(n):
+    d = 0
+    m = random.randint(1,37)
+    for i in range(m):                    
+        ball.left(360/37)
+        ball.forward(n)
+    while d != 3:        
+        for i in range(37):                    
+            ball.left(360/37)
+            ball.forward(n)
+        d +=1
+
+        
+def sqr():
+    for i in range(12):
+        bob.forward(50)
+        bob.left(90)
+        bob.forward(50)
+        bob.backward(50)
+        bob.right(90)
+        
+def bettingBoard():
+    bob.forward(600)
+    bob.left(90)
+    bob.forward(250)
+    bob.left(90)
+    bob.forward(600)
+    bob.left(90)
+    bob.forward(250)
+    bob.backward(50)
+    bob.left(90)
+    for j in range(4):
+        bob.forward(150)
+        bob.right(90)
+        bob.forward(50)
+        bob.backward(50)
+        bob.left(90)
+    bob.left(90)
+    bob.forward(50)
+    bob.left(90)
+    for i in range(3):
+        sqr()
+        bob.backward(600)
+        bob.right(90)
+        bob.forward(50)
+        bob.left(90)
+    for u in range(3):    
+        bob.forward(200)
+        bob.left(90)
+        bob.forward(50)
+        bob.backward(50)
+        bob.right(90)
+    bob.left(90)#
+    bob.forward(50)
+    bob.right(90)
+    bob.forward(25)
+    bob.left(45)
+    bob.forward(25)
+    bob.left(45)
+    bob.forward(114)
+    bob.left(45)
+    bob.forward(25)
+    bob.left(45)
+    bob.forward(25)
+    coord = {1:(15,165), 2:(15,115), 3:(15,65), 4:(65,165), 5:(65,115), 6:(65,65), 7:(115,165), 8:(115,115), 9:(115,65), 10:(165,165), 11:(165,115), 12:(165,65), 13:(215,165), 14:(215,115), 15:(215,65), 16:(265,165), 17:(265,115), 18:(265,65), 19:(315,165),  20:(315,115), 21:(315,65), 22:(365,165), 23:(365,115), 24:(365,65), 25:(415,165), 26:(415,115), 27:(415,65), 28:(465,165), 29:(465,115), 30:(465,65), 31:(515,165), 32:(515,115), 33:(515,65), 34:(565,165), 35:(565,115), 36:(565,65)}
+    for i in range(1,37):                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+        bob.penup()
+        bob.goto(coord[i])
+        bob.pendown()
+        if i in [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36]:
+            bob.color('red')
+        else:
+            bob.color('black')
+        bob.write(i, font =('Arial',30,'normal'))   
+    bob.penup()
+    bob.color('white')
+    bob.goto(-25,115)
+    bob.pendown()
+    bob.write( 0 , font =('Arial',30,'normal')) 
+    bob.penup()
+    bob.goto(65,215)
+    bob.pendown()
+    bob.write( '1st 12' , font =('Arial',30,'normal'))
+    bob.penup()
+    bob.goto(265,215)
+    bob.pendown()
+    bob.write( '2nd 12' , font =('Arial',30,'normal'))
+    bob.penup()
+    bob.goto(465,215)
+    bob.pendown()
+    bob.write( '3rd 12' , font =('Arial',30,'normal'))
+    
+    bob.penup()
+    bob.goto(35,15)
+    bob.pendown()    
+    bob.write( 'EVEN' , font =('Arial',30,'normal'))
+    
+    bob.penup()
+    bob.goto(185,15)
+    bob.pendown()
+    bob.write( 'ODD' , font =('Arial',30,'normal'))    
+
+    bob.penup()
+    bob.goto(330,15)
+    bob.pendown()
+    bob.color('black')
+    bob.write( 'BLACK' , font =('Arial',30,'normal'))
+    
+    bob.penup()
+    bob.goto(495,15)
+    bob.pendown()
+    bob.color('red')
+    bob.write( 'RED' , font =('Arial',30,'normal'))
+    bob.hideturtle()     
+
+
+######
+
+bob1.penup()
+bob1.goto(-325,100)
+bob1.pendown()
+
+polygon1(43)
+
+polygon2(42)
+bob1.right((360/37)/2)
+polygon3(39)
+bob1.left((360/37)/2)
+polygon1(33)
+
+polygon4(33)
+
+
+bob1.penup()
+bob1.goto(0,0)
+bob1.pendown()
+
+bettingBoard()
+
+ball.goto(-108.70,118.41)
+ball.right(4)
+ball.left(90)
+polygon5(37)
+
+
+
