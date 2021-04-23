@@ -1,0 +1,24 @@
+#Status Report
+
+Borel Hounkpatin
+
+#TEAM
+
+Kyle Rowe
+
+#Proget
+
+Roulette Game
+
+#Project so far
+
+Wrote the code to draw the roulette wheel and the betting board.
+
+Defined the different bet options.
+
+#Not done yet
+
+Create a button to start spinning the ball in the wheel and return the winning number.
+
+Create a text box that display if the player won or lost and ask if the player want to play again. 
+
