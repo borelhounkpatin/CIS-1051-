@@ -1,10 +1,21 @@
-# CIS-1051-
-Projects
-Buil a roulette wheel game.
-1. The game will prompt the user for the total betting purse.
-2. The game will display all the betting options.
-3. At each turn, the game will prompt the user for the bet's amount for the current turn. This amount is less or equal to the total betting purse
-plus all the winning from the previous turns minus all the losses.
-4. At each turn,prompt the user on if he want to keep play.
-5. The game will quit running if the betting purse equals zero.
-I am doing this project with Kyle Rowe. Our assigned TA is Joanne Nichols.
+# CIS-1051
+
+Team Project: Buil a roulette wheel game with graphic interface.
+
+Members: Borel Hounkpatin and Kyle Rowe.
+
+Assigned TA: Joanne Nichols
+
+1. The program draws a wheel and a betting board with all the betting options.
+
+2. The user starts the game with a total betting purse of $100.
+
+3. The user can bet $5, $10 and $25. Each of these amounts are respectively represented by  a yellow, blue, and black chip.
+
+4. To play: The user drags a chip onto the board to place a bet, and then click the PLAY button.
+
+5. To replay: The user clicks the RESET button, drags a chip onto the board to place a bet, and then click the PLAY button.
+
+6. At each turn, the program prints the winning number, whether or not the user won, and the payout.
+
+7. The game will quit running if the user types 'Exit' or if the betting purse equals zero.
