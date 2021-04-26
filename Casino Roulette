@@ -124,8 +124,7 @@ def spin_ball(n):
     ball.setpos(-108.70,118.41)
     ball.right(4)
     ball.left(90)
-    m = random.randint(0,36)
-
+    m = random.randint(0,36)    
     for i in range(m):
         ball.left(360/37)
         ball.forward(n)      
@@ -136,16 +135,19 @@ def spin_ball(n):
         ball.forward(n/3)
     elif 12 <= m <= 14:
         ball.forward(n*(2/3))
-    elif 14 < m < 24:
+    elif 14 < m < 22:
         ball.forward(n)        
-    elif 24 <= m < 29:
+    elif 22 <= m < 30:
         ball.forward(n/2)    
+    elif 30 <= m < 32:
+        ball.forward(n/3)    
     while d != 2:        
         for i in range(37):                    
             ball.left(360/37)
             ball.forward(n)
-        d +=1    
-    return win_pos[pos]    
+        d +=1
+    return win_pos[pos]
+  
 
 def sqr():
     for i in range(12):
