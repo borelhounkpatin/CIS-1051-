@@ -19,3 +19,5 @@ Assigned TA: Joanne Nichols
 6. At each turn, the program prints the winning number, whether or not the user won, and the payout.
 
 7. The game will quit running if the user types 'Exit' or if the betting purse equals zero.
+
+Youtube URL: https://youtu.be/VGZ9NCJgCnQ
